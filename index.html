@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/bi/css/vendor.css" type="text/css">
+    <title></title>
+  </head>
+  <body ontouchstart="">
+    <header data-code-id="homePage" class="wrap-gap"><a id="js-sel-cinema" class="sel-cinema"><i></i> 筛选</a><span id="js-title" class="title"></span><a href="/bi/navReport.html" class="sel-chart"></a>
+    </header>
+    <!--include group-box/date-sels-->
+    <div id="js-page-date" class="date wrap-gap">
+      <!--span 昨日--><em style="padding-left: 0"></em>
+    </div>
+    <div class="cinema">
+      <div class="income">
+        <p><span><b></b><i id="js-ticket"></i><em>万元</em></span><br/>票房收入</p>
+        <!--p-->
+        <!--    span(style="color: #46d1b8")-->
+        <!--        i 18,2-->
+        <!--        em 万元-->
+        <!--    | <br/>卖品收入-->
+      </div>
+      <div id="js-income-msg" class="msg"><span><b></b>场次</span><span><b></b>万 人次</span><span><b></b>% 上座率</span></div>
+    </div>
+    <div class="mt2">
+      <div class="date-wrap">
+        <div id="js-date-change" class="date-sel wrap-gap"><a class="prev"><i></i>前一周</a><span>
+            <!--if date-->
+            <!--    | #{date}-->
+            <!--else-->
+            <!--    | 2016.09.09--><em></em></span><a class="next disabled">后一周<i></i></a></div>
+      </div>
+    </div>
+    <div class="mt2">
+      <div id="wrap-playbox" class="selectplay wrap-gap"><span id="js-play-sel">统计空场<i></i></span><span id="js-play-seat">有效座位<i></i></span>
+      </div>
+      <div id="fixed-bgd-opacity" class="opacity-bgs">
+        <ul class="play-list">
+          <li>统计空场<i></i></li>
+          <li>不统计空场<i></i></li>
+        </ul>
+        <ul class="play-list">
+          <li>有效座位<i></i></li>
+          <li>全部座位<i></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="chart wrap-gap">
+      <h1>票房走势</h1>
+      <div id="js-ticket-chart" class="msg"></div>
+    </div>
+    <!--.chart.wrap-gap-->
+    <!--    h1 卖品走势-->
+    <!--    .msg-->
+    <footer class="footer"><a href="/bi/index.html"><i class="i-home"></i>首页</a><a href="/bi/movie/index.html"><i class="i-movie"></i>影片</a><a href="/bi/cinema/index.html"><i class="i-cinema"></i>影院</a><a href="/bi/user/index.html"><i class="i-user"></i>我的</a></footer>
+    <script>
+      function htmlSize(){
+          var size=document.body.clientWidth/10;
+          document.getElementById('html').style.fontSize=(size > 50) ? 50 : size + 'px';
+      }
+      window.resize=function(){
+          htmlSize();
+      }
+      htmlSize();
+      
+      
+    </script>
+    <script src="/bi/build/echarts.min.js"></script>
+    <script src="/bi/build/vendor.js"></script>
+    <script src="/bi/build/global.js"></script>
+    <script src="/bi/build/index.js"></script>
+  </body>
+</html>
