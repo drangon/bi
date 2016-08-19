@@ -1,0 +1,22 @@
+extends ../layout
+
+block title
+    title 影片
+
+block main
+
+    - var scriptName='movie/mindex';
+    - var filterArr=['票房收入', '票房占比', '场次', '场次占比', '人次', '人次占比', '场均人次', '上座率', '单座产值', '排座占比', '票房效能', '排片效率', '排座效率'];
+
+    include ../group-box/header
+
+    - var date='2016.09.09';
+
+    include ../group-box/date-sel
+
+    .chart.wrap-gap.mt2
+        h1 票房TOP5
+        .msg#js-movie-chart
+
+    include ../group-box/data-list
+    include ../group-box/popup

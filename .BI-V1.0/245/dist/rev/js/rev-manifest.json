@@ -1,0 +1,13 @@
+{
+  "cinema/cindex.js": "cinema/cindex-e12b11307a.js",
+  "cinema/movie.js": "cinema/movie-9b58e15ea4.js",
+  "cinema/selCinema.js": "cinema/selCinema-a14d2eb0b2.js",
+  "cinema/ticket.js": "cinema/ticket-8e1da27b51.js",
+  "global.js": "global-697308f1f7.js",
+  "index.js": "index-7b0ac2a1ce.js",
+  "movie/mindex.js": "movie/mindex-48e3aafc1d.js",
+  "movie/movieDetail.js": "movie/movieDetail-8ab98721a8.js",
+  "user/login.js": "user/login-8a9a87ad03.js",
+  "user/uindex.js": "user/uindex-fcf495ee62.js",
+  "vendor.js": "vendor-adab482027.js"
+}

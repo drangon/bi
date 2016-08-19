@@ -1,0 +1,54 @@
+doctype html
+html#html
+
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
+        link(rel="stylesheet", href="/bi/css/vendor.css", type="text/css")
+
+        block link
+        block title
+            title
+
+    block body
+    body(ontouchstart="")
+
+        block main
+
+        if !hideFooter
+            footer.footer
+                a(href="/bi/index.html")
+                    i.i-home
+                    | 首页
+                a(href="/bi/movie/index.html")
+                    i.i-movie
+                    | 影片
+                a(href="/bi/cinema/index.html")
+                    i.i-cinema
+                    | 影院
+                a(href="/bi/user/index.html")
+                    i.i-user
+                    | 我的
+        else
+            style.
+                body{padding: 0}
+
+
+        block script
+            script.
+                function htmlSize(){
+                    var size=document.body.clientWidth/10;
+                    document.getElementById('html').style.fontSize=(size > 50) ? 50 : size + 'px';
+                }
+                window.resize=function(){
+                    htmlSize();
+                }
+                htmlSize();
+
+
+        - var scriptUrl='/bi/build/';
+        script(src="#{scriptUrl}vendor.js")
+        if !hideGlobalJs
+            script(src="#{scriptUrl}global.js")
+        if scriptName
+            script(src="#{scriptUrl}"+scriptName+".js")

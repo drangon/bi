@@ -1,0 +1,513 @@
+@import "predefine";
+@import "btn";
+@import "data-list";
+
+*{
+    //vertical-align: top;
+    // -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+body,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+    font-family: "STXihei","Microsoft YaHei","Helvetica Neue","HelveticaNeue","Helvetica-Neue","Helvetica","BBAlpha Sans","sans-serif";
+    list-style: none;
+}
+body{
+    padding-bottom: rateRem(146);
+    background: #f5f5f5;
+    visibility: hidden;
+    font-size: $f42;
+}
+div{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+em,i{
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+html{
+    font-size: 41.4px;
+}
+input{
+    outline: 0;
+    font-size: $f42;
+}
+.hairlines .all-search a{
+    border: 0.5px solid #546db3;
+    border-radius: 3px;
+}
+.js-jr .all-search a{
+    border: 1px solid #546db3;
+    border-radius: 3px;
+}
+.abcde{
+    &:after{
+        width:200%;
+        height:200%;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:0;
+        content:"";
+        -webkit-transform:scale(0.5);
+        -webkit-transform-origin:0 0;
+        transform:scale(0.5);
+        transform-origin:0 0;
+        border-bottom:1px solid #e5e5e5;
+    }
+}
+.abcedf{
+    &:before{
+        width:200%;
+        height:200%;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:0;
+        content:"";
+        -webkit-transform:scale(0.5);
+        -webkit-transform-origin:0 0;
+        transform:scale(0.5);
+        transform-origin:0 0;
+        border-top:1px solid #e5e5e5;
+    }
+}
+.dis-none{
+    display: none;
+}
+
+.wrap-gap{
+    position: relative;
+    padding-left: rateRem(30);
+    padding-right: rateRem(30);
+}
+.mt2{
+    margin-top: rateRem(22);
+}
+.mt3b3{
+    margin-top: rateRem(32);
+    margin-bottom: rateRem(32);
+}
+
+header{
+    height: rateRem(132);
+    line-height: rateRem(142);
+    background: #283047;
+    font-size: rateRem(56);
+    text-align: center;
+    color: $colfff;
+    .title{
+        display: inline-block;
+        max-width: rateRem(550);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .sel-cinema{
+        display: block;
+        position: absolute;
+        right: rateRem(142);
+        font-size: $f42;
+        color: $colfff;
+        i{
+            content: '';
+            display: block;
+            float: left;
+            margin: 0 5px 0 0;
+            width: rateRem(61);
+            height: rateRem(132);
+            @include background('i-sel-cinema');
+            background-size: contain;
+        }
+    }
+    .back{
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: rateRem(105);
+        height: 100%;
+        &:before{
+            display: inline-block;
+            width: rateRem(40);
+            height: rateRem(40);
+            content: '';
+            border: 2px solid #fff{
+                width: 2px 0 0 2px;
+            };
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -mox-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+        }
+    }
+    .close{
+        display: block;
+        position: absolute;
+        left: rateRem(34);
+        width: rateRem(58);
+        height: rateRem(132);
+        @include background('i-close');
+        background-size: contain;
+    }
+    .sel-chart{
+        display: block;
+        position: absolute;
+        right: rateRem(34);
+        top: 0;
+        width: rateRem(69);
+        height: rateRem(132);
+        @include background('i-sel-chart');
+        background-size: contain;
+    }
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: $colfff;
+    @extend .abcedf;
+    &:before{
+        border-top-color: $cold9d;
+    }
+    @include flex();
+    z-index:100;
+    a{
+        position: relative;
+        display: block;
+        height: rateRem(148);
+        line-height: rateRem(33);
+        font-size: $f38;
+        color: $col818;
+        text-align: center;
+        @include flexValue();
+        .i-home{
+            @include background('i-home');
+        }
+        .i-movie{
+            @include background('i-movie');
+        }
+        .i-cinema{
+            @include background('i-cinema');
+        }
+        .i-user{
+            @include background('i-user');
+        }
+        &.active{
+            color: $globalColor;
+            .i-home{
+                @include background('i-home-a');
+            }
+            .i-movie{
+                @include background('i-movie-a');
+            }
+            .i-cinema{
+                @include background('i-cinema-a');
+            }
+            .i-user{
+                @include background('i-user-a');
+            }
+        }
+        i{
+            display: block;
+            margin: 0 auto;
+            width: rateRem(68);
+            height: rateRem(97);
+            background-size: contain;
+        }
+    }
+}
+.chart{
+    position: relative;
+    background: white;
+    @extend .abcedf;
+    h1{
+        padding: rateRem(72) 0 rateRem(60);
+        font-size: $f42;
+        font-weight: normal;
+        text-align: center;
+    }
+    .msg{
+        padding-bottom: rateRem(54);
+        height: rateRem(745);
+        // border-bottom: 1px solid #e5e5e5;
+    }
+}
+
+.search{
+    @include flex;
+    span{
+        display: block;
+        @include flexValue;
+        &.btn > a{
+            width: rateRem(150);
+            height: rateRem(108);
+            line-height: rateRem(108);
+        }
+    }
+    span:first-child{
+        @include flexValue(100);
+        margin-right: rateRem(32);
+        height: rateRem(110);
+        border: rateRem(1) solid #e9e9e9;
+        background: white;
+        border-radius: 5px;
+        &:before{
+            content: '';
+            display: block;
+            float: left;
+            width: rateRem(83);
+            height: rateRem(110);
+            @include background('i-search');
+            background-size: contain;
+        }
+        input{
+            margin-top: rateRem(30);
+            width: 70%;
+            background: transparent;
+            border: 0;
+            vertical-align: top;
+        }
+    }
+    span:last-child{
+        width: rateRem(150);
+    }
+    &:after{
+        content: '';
+        clear: both;
+        display: block;
+    }
+    .i-clear{
+        display: none;
+        float: right;
+        width: rateRem(86);
+        height: rateRem(110);
+        @include background('i-input-clear');
+        background-size: contain;
+    }
+}
+
+.date-wrap{
+    //padding-bottom: rateRem(22);
+    background: #f5f5f5;
+}
+.date-sel{
+    position: relative;
+    height: rateRem(77);
+    line-height: rateRem(84);
+    padding: rateRem(26) rateRem(30);
+    background: $colfff;
+    @extend .abcde;
+    @extend .abcedf;
+    font-size: $f36;
+    @include flex();
+    a{
+        position: relative;
+        z-index: 2;
+        display: block;
+        color: $globalColor;
+        @include flexValue;
+        i{
+            display: inline-block;
+            margin: rateRem(20) rateRem(20) 0 0;
+            width: rateRem(30);
+            height: rateRem(30);
+            border: 1px solid $globalColor;
+            border-width: 1px 0 0 1px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+    .disabled{
+        color: $cola6a;
+        i{
+            border-color: $cola6a;
+        }
+    }
+    em{
+        display: inline-block;
+        float: right;
+        margin-left: rateRem(27);
+        padding-left: rateRem(27);
+        width: rateRem(50);
+        height: rateRem(51);
+        margin-top: rateRem(14);
+        @include background('i-date');
+        background-position: right top;
+        background-size: contain;
+        border-left: 1px solid #c8c8c8;
+    }
+    .next{
+        text-align: right;
+        i{
+            margin-left: rateRem(20);
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+    }
+    span{
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        padding: 0 rateRem(33);
+        background: $colf5f;
+        border-radius: 2px;
+        //&:after{
+        //    content: '';
+        //    display: inline-block;
+        //    width: rateRem(80);
+        //    height: rateRem(50);
+        //    border-left: 1px solid $colc8c;
+        //}
+    }
+}
+
+.data-item{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 4;
+    background: white;
+    a{
+        color: $globalColor;
+        font-size: $f38;
+    }
+    .header{
+        @extend .abcde;
+        &:after{
+            height: 195%;
+        }
+        height: rateRem(120);
+        line-height:rateRem(120);
+        overflow: hidden;
+        a{
+            float: right;
+            &:first-child{
+                float: left;
+                color: #6e6e6e;
+            }
+            position: relative;
+            z-index:2;
+        }
+    }
+    .list{
+        text-align: justify;
+        height: auto;
+        overflow: hidden;
+        padding-top: rateRem(6);
+        padding-bottom: 3px;
+        margin: 0 rateRem(42);
+        span{
+            display: inline-block;
+            // width: 33.33%;
+            // float: left;
+            &.active{
+                a{
+                    background: #546db3;
+                    border-color: #4c63d8;
+                    color: #fff;
+                }
+            }
+            &:nth-child(3n-2){
+                margin-left: -(rateRem(36));
+            }
+        }
+        a{
+            display: inline-block;
+            width: rateRem(360);
+            height: rateRem(104);
+            line-height: rateRem(104);
+            margin-top: rateRem(44);
+            margin-left: rateRem(36);
+            border: 1px solid #546db3;
+            border-radius: 3px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    }
+    .msg{
+        margin-top: rateRem(40);
+        padding-bottom: rateRem(100);
+        line-height: rateRem(60);
+        span{
+            display: block;
+            color: #818181;
+            font-size: $f32;
+            &:first-child{
+                color: $globalColor;
+            }
+        }
+        em{
+            padding-right: 4px;
+        }
+    }
+}
+
+.error-msg{
+    position: fixed;
+    left: 50%;
+    bottom: rateRem(510);
+    z-index: 10001;
+    padding: rateRem(40) rateRem(70);
+    background: rgba(129, 129, 129, 0.8);
+    font-size: $f38;
+    color: #fff;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.breadcrumbs{
+    position: relative;
+    height: rateRem(130);
+    line-height: rateRem(130);
+    padding: 0 rateRem(88);
+    ul{
+        @include flex();
+        li {
+            @include flexValue();
+            height: rateRem(130);
+            line-height: rateRem(130);
+            font-size: $f42;
+            text-align: center;
+            &.active{
+                a{  
+                    display: block;
+                    color: #ff9c00;
+                    box-shadow: inset 0  (-(rateRem(12))) #ff9c00;
+                }
+            }
+        }
+    }
+}
+.error-wrap{
+    margin: 0 rateRem(26);
+    padding: rateRem(172) 0;
+    text-align: center;
+    background: #fff;
+    &.bg-f{
+        background: #f5f5f5;
+        margin: 0;
+    }
+    .error-icon{
+        @include background('sad-icon');
+        display: inline-block;
+        width: rateRem(132);
+        height: rateRem(132);
+        background-size: 100%;
+    }
+    p{
+        margin-top: rateRem(40);
+        font-size: $f42;
+        color: $col818;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/bi/css/vendor.css" type="text/css">
+    <title></title>
+  </head>
+  <body ontouchstart="">
+    <header class="wrap-gap"><a id="js-cinema-close" href="javascript:history.go(-1)" class="close"></a><span id="js-title" class="title">报表导航</span>
+    </header>
+    <div class="wrap-box">
+      <ul id="js-report" class="nav-list">
+        <li><a href="/bi/index.html">核心经营数据趋势<em></em></a></li>
+        <li><a href="/bi/movie/index.html">影片放映成绩排名<em></em></a></li>
+        <li><a href="/bi/cinema/index.html">影院经营情况排名<em></em></a></li>
+        <li><a href="/bi/cinema/movie.html">影院排片情况分析<em></em></a></li>
+        <li><a href="/bi/cinema/ticket.html">影院票房销售趋势分析<em>          </em></a></li>
+      </ul>
+    </div>
+    <footer class="footer"><a href="/bi/index.html"><i class="i-home"></i>首页</a><a href="/bi/movie/index.html"><i class="i-movie"></i>影片</a><a href="/bi/cinema/index.html"><i class="i-cinema"></i>影院</a><a href="/bi/user/index.html"><i class="i-user"></i>我的</a></footer>
+    <script>
+      function htmlSize(){
+          var size=document.body.clientWidth/10;
+          document.getElementById('html').style.fontSize=(size > 50) ? 50 : size + 'px';
+      }
+      window.resize=function(){
+          htmlSize();
+      }
+      htmlSize();
+      
+      
+    </script>
+    <script src="/bi/build/vendor.js"></script>
+    <script src="/bi/build/global.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+@import "predefine";
+
+.user-v{
+    margin: rateRem(48) 0  rateRem(126);
+    height: rateRem(130);
+    line-height: rateRem(130);
+    background: #fff;
+    font-size: $f42;
+    @extend .abcde;
+    @extend .abcedf;
+}

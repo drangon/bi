@@ -1,0 +1,16 @@
+extends ../layout
+
+block title
+    title 用户中心
+
+block main
+
+    - var scriptName='user/uindex';
+
+    header
+        span.title 我的
+
+    .user-v.wrap-gap 当前版本：Beta1.0
+
+    .btn.wrap-gap
+        a#js-logout 退出登录

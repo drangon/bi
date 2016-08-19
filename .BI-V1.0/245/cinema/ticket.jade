@@ -1,0 +1,57 @@
+extends ../layout
+
+block main
+
+    - var scriptName='cinema/ticket';
+    - var dateUnit='周';
+    - var date='2016.01.01-2016.09.09';
+    - var filterArr=['票房收入', '场次', '人次', '场均人次', '上座率', '平均票价'];
+    - var nvFlag='1';
+    - var showBackIcon=true;
+    - var backIconUrl='/bi/cinema/index.html';
+    include ../group-box/header
+    include ../group-box/breadcrumbs
+    include ../group-box/date-sel
+
+    .chart.wrap-gap.mt2
+        h1 票房走势
+        .msg#js-chart
+
+    .data-list#js-data-list
+        p.more.wrap-gap
+            //if dateCheckbox
+            //    span.checkbox.active 是否空场
+            a#js-more-filter 更多指标
+        ul.header.wrap-gap
+            li(data-type="0").c0 日期
+            li(data-type="1").up.c1
+                span 票房收入
+                    em
+                    em
+                | <br/>
+            li(data-type="2").down.c2
+                span 场次
+                    em
+                    em
+                | <br/>
+            li(data-type="3").c3
+                span 人次
+                    em
+                    em
+                | <br/>
+            li(data-type="4").c4
+                span 场均人次
+                    em
+                    em
+                | <br/>
+            li(data-type="5").dis-none
+                span 上座率
+                    em
+                    em
+                | <br/>
+            li(data-type="6").dis-none
+                span 平均票价
+                    em
+                    em
+                | <br/>
+    include ../group-box/popup

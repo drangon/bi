@@ -1,0 +1,26 @@
+@import 'predefine';
+
+.btn{
+    position: relative;
+    a{ 
+        position: relative;
+        display: block;
+        height: rateRem(110);
+        line-height: rateRem(110);
+        background: $globalColor;
+        text-align: center;
+        color: $colfff;
+        font-size: $f42;
+        border-radius: 3px;
+     }
+}
+.btn-c-white{
+    a{
+        background: #fff;
+        color: #546db3;
+        &:active{
+            background: $globalColor;
+            color: $colfff;
+        }
+    }
+}

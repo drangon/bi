@@ -1,0 +1,77 @@
+@import "predefine";
+
+.login-bg{
+    visibility: visible;
+    @include background('login-bg', 'jpg');
+    background-size: cover;
+}
+.android-login{
+    @include background('body-bg', 'jpg');
+    .top-logo{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: rateRem(160);
+    }
+    .login{
+        padding-top: rateRem(750);
+    }
+}
+.login{
+    padding: rateRem(1160) rateRem(110) 0 rateRem(110);
+    font-size: $f48;
+    li{
+        padding: rateRem(35) 0;
+        position: relative;
+        @extend .abcde;
+        &:after{
+            border-bottom-color: #8da1d0;
+        }
+        &:before{
+            content: '';
+            display: inline-block;
+            position: relative;
+            top: 3px;
+            width: rateRem(60);
+            height: rateRem(60);
+            @include background('i-login-pwd');
+            background-size: contain;
+        }
+        // &:first-child{
+        //     &:before{
+        //         @include background('i-login-user');
+        //         background-size: contain;
+        //     }
+        // }
+        input{
+            position: relative;
+            z-index: 2;
+            height: rateRem(60);
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: $f48;
+            &::-webkit-input-placeholder{
+                color: $colfff;
+            };
+            &::-moz-placeholder{
+                color: $colfff;
+            }
+        }
+    }
+    .btn{
+        a{
+            font-size: $f48;
+            &.disabled{
+                background: #e5e5e5;
+                color: $colfff;
+            }
+        }
+    }
+    .error{
+        height: rateRem(120);
+        line-height: rateRem(120);
+        color: #fff;
+        font-size: $f38;
+    }
+}

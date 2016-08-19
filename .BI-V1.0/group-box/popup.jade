@@ -1,0 +1,32 @@
+//extends layout
+div(style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); display: none; z-index: 3;")
+.data-item#js-filter-list
+    .header.wrap-gap#js-filter-ok
+        a 取消
+        a(data-checked="1,2,3,4") 确定
+    .list
+        - var activeClass='';
+        each item, index in filterArr
+            if index<4
+                span.active
+                    a=item
+            else
+                span
+                    a=item
+
+    .msg.wrap-gap
+        span
+            em *
+            | 最多可选择4项，最少选择1项
+        span
+            em *
+            | 场均人次=人次/场次
+        span
+            em *
+            | 票房效能=票房占比/场次占比
+        span
+            em *
+            | 排片效率=人次占比/场次占比
+        span
+            em *
+            | 排座效率=人次占比-排座占比

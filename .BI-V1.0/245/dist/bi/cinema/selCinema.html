@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/bi/css/vendor-7c011f68af.css" type="text/css">
+    <title>选择影院</title>
+  </head>
+  <body ontouchstart="">
+    <header class="wrap-gap"><a id="js-cinema-close" href="javascript:history.go(-1)" class="close"></a><span id="js-title" class="title">选择影院</span>
+    </header>
+    <div class="search wrap-gap mt3b3"><span>
+        <input id="js-search-input" type="text"><a id="js-searcl-clear" class="i-clear"></a></span><span class="btn btn-c-white all-search"><a id="js-cancel-search">取消</a></span></div>
+    <div class="wrap-gap">
+      <div class="btn btn-c-white all-search"><a href="/bi/index.html" data-name="全部影院" data-code="">全部影院</a></div>
+    </div>
+    <div>
+      <div id="js-cinema">
+        <!--dl.cinema-list-->
+        <!--    dt-->
+        <!--        a(name="A") A-->
+        <!--    dd-->
+        <!--        a(href="#") 安宁横店影城-->
+        <!--        a(href="#") 安宁横店影城-->
+        <!--        a(href="#") 安宁横店影城-->
+      </div>
+    </div>
+    <div class="cinema-abbr">
+      <!--a A-->
+    </div>
+    <style>
+      body{padding: 0}
+      
+      
+    </style>
+    <script>
+      function htmlSize(){
+          var size=document.body.clientWidth/10;
+          document.getElementById('html').style.fontSize=(size > 50) ? 50 : size + 'px';
+      }
+      window.resize=function(){
+          htmlSize();
+      }
+      htmlSize();
+      
+      
+    </script>
+    <script src="/bi/build/vendor-adab482027.js"></script>
+    <script src="/bi/build/global-697308f1f7.js"></script>
+    <script src="/bi/build/cinema/selCinema-a14d2eb0b2.js"></script>
+  </body>
+</html>

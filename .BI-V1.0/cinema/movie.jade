@@ -1,0 +1,16 @@
+extends ../layout
+
+block main
+
+    - var scriptName='cinema/movie';
+    - var filterArr=['票房收入', '票房占比', '场次', '场次占比', '人次', '人次占比', '场均人次', '上座率', '单座产值', '排座占比', '票房效能', '排片效率', '排座效率'];
+    - var date='2016.09.09';
+    - var nvFlag='0';
+    - var showBackIcon=true;
+    - var backIconUrl='/bi/cinema/index.html';
+
+    include ../group-box/header
+    include ../group-box/breadcrumbs
+    include ../group-box/date-sel
+    include ../group-box/data-list
+    include ../group-box/popup

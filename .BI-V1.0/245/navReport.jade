@@ -1,0 +1,32 @@
+extends layout
+
+block main
+
+    - var showCloseIcon=true;
+    - var hideSelCinemaIcon=true;
+    - var hideChartIcon=true;
+    - var defaultTitle='报表导航'
+
+    include group-box/header
+
+    .wrap-box
+        ul.nav-list#js-report
+            li
+                a(href="/bi/index.html") 核心经营数据趋势
+                    em
+            li
+                a(href="/bi/movie/index.html") 影片放映成绩排名
+                    em
+            li
+                a(href="/bi/cinema/index.html") 影院经营情况排名
+                    em
+            li
+                a(href="/bi/cinema/movie.html") 影院排片情况分析
+                    em
+            li
+                a(href="/bi/cinema/ticket.html") 影院票房销售趋势分析
+                    em           
+
+        
+
+    

@@ -1,0 +1,19 @@
+extends ../layout
+
+block main
+
+    - var scriptName='movie/movieDetail';
+    - var filterArr=['票房收入', '票房占比', '场次', '场次占比', '人次', '人次占比', '场均人次', '上座率', '单座产值', '排座占比', '票房效能', '排片效率', '排座效率'];
+    - var date='';
+    - var dateUnit='周';
+    - var hideFooter=true;
+    - var showBackIcon=true;
+    - var backIconUrl='/bi/movie/index.html';
+    include ../group-box/header
+    include ../group-box/date-sel
+    .chart.wrap-gap.mt2
+        h1 票房走势
+        .msg#js-movie-chart
+
+    include ../group-box/data-list
+    include ../group-box/popup

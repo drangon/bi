@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/bi/css/vendor.css" type="text/css">
+    <title>影片</title>
+  </head>
+  <body ontouchstart="">
+    <header class="wrap-gap"><a id="js-sel-cinema" class="sel-cinema"><i></i> 筛选</a><span id="js-title" class="title"></span><a href="/bi/navReport.html" class="sel-chart"></a>
+    </header>
+    <div class="date-wrap">
+      <div id="js-date-change" class="date-sel wrap-gap"><a class="prev"><i></i>前一天</a><span>
+          <!--if date-->
+          <!--    | #{date}-->
+          <!--else-->
+          <!--    | 2016.09.09--><em></em></span><a class="next disabled">后一天<i></i></a></div>
+    </div>
+    <div class="chart wrap-gap mt2">
+      <h1>票房TOP5</h1>
+      <div id="js-movie-chart" class="msg"></div>
+    </div>
+    <div id="js-data-list" class="data-list">
+      <p class="more wrap-gap"><a id="js-more-filter">更多指标</a>
+      </p>
+      <ul class="header wrap-gap">
+        <li data-type="0" class="c0">影片名称</li>
+        <li data-type="1" class="up c1"><span>票房收入<em></em><em></em></span><br/></li>
+        <li data-type="2" class="down c2"><span>票房占比<em></em><em></em></span><br/></li>
+        <li data-type="3" class="c3"><span>场次<em></em><em></em></span><br/></li>
+        <li data-type="4" class="c4"><span>场次占比<em></em><em></em></span><br/></li>
+        <li data-type="5" class="dis-none"><span>人次<em></em><em></em></span><br/></li>
+        <li data-type="6" class="dis-none"><span>人次占比<em></em><em></em></span><br/></li>
+        <li data-type="7" class="dis-none"><span>场均人次<em></em><em></em></span><br/></li>
+        <li data-type="8" class="dis-none"><span>上座率<em></em><em></em></span><br/></li>
+        <li data-type="9" class="dis-none"><span>单座产值<em></em><em></em></span><br/></li>
+        <li data-type="10" class="dis-none"><span>排座占比<em></em><em></em></span><br/></li>
+        <li data-type="11" class="dis-none"><span>票房效能<em></em><em></em></span></li>
+        <li data-type="12" class="dis-none"><span>排片效率<em></em><em></em></span><br/></li>
+        <li data-type="13" class="dis-none"><span>排座效率<em></em><em></em></span><br/></li>
+      </ul>
+      <!--ul.msg-->
+      <!--    li-->
+      <!--        span 1-->
+      <!--        | <b>X战警X战警X战警X战警</b>-->
+      <!--    li 11.22-->
+      <!--    li 22.2-->
+      <!--    li 70-->
+      <!--    li 5.4-->
+      <!--    li-->
+      <!--        span 1-->
+      <!--        | X战警X战警X战警X战警-->
+    </div>
+    <!--extends layout-->
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); display: none; z-index: 3;"></div>
+    <div id="js-filter-list" class="data-item">
+      <div id="js-filter-ok" class="header wrap-gap"><a>取消</a><a data-checked="1,2,3,4">确定</a></div>
+      <div class="list"><span class="active"><a>票房收入</a></span><span class="active"><a>票房占比</a></span><span class="active"><a>场次</a></span><span class="active"><a>场次占比</a></span><span><a>人次</a></span><span><a>人次占比</a></span><span><a>场均人次</a></span><span><a>上座率</a></span><span><a>单座产值</a></span><span><a>排座占比</a></span><span><a>票房效能</a></span><span><a>排片效率</a></span><span><a>排座效率</a></span>
+      </div>
+      <div class="msg wrap-gap"><span><em>*</em>最多可选择4项，最少选择1项</span><span><em>*</em>场均人次=人次/场次</span><span><em>*</em>票房效能=票房占比/场次占比</span><span><em>*</em>排片效率=人次占比/场次占比</span><span><em>*</em>排座效率=人次占比-排座占比</span></div>
+    </div>
+    <footer class="footer"><a href="/bi/index.html"><i class="i-home"></i>首页</a><a href="/bi/movie/index.html"><i class="i-movie"></i>影片</a><a href="/bi/cinema/index.html"><i class="i-cinema"></i>影院</a><a href="/bi/user/index.html"><i class="i-user"></i>我的</a></footer>
+    <script>
+      function htmlSize(){
+          var size=document.body.clientWidth/10;
+          document.getElementById('html').style.fontSize=(size > 50) ? 50 : size + 'px';
+      }
+      window.resize=function(){
+          htmlSize();
+      }
+      htmlSize();
+      
+      
+    </script>
+    <script src="/bi/build/vendor.js"></script>
+    <script src="/bi/build/global.js"></script>
+    <script src="/bi/build/movie/mindex.js"></script>
+  </body>
+</html>

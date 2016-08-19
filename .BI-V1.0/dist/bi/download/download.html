@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaDescription" name="description" content="" />
+<!-- 是否允许作为本地程序运行 -->
+<!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+<!-- 可视宽度、缩放比例、是否允许缩放 -->
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<title></title>
+<style>
+html,input,textarea{font: normal .8em  "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;color: #000;}
+body, button, ul, li, ol, p, dl, dd, h1, h2, h3, h4, h5, h6, img, iframe, form, input, textarea, td,select,em { margin: 0; padding: 0; list-style-type: none; border: 0; font-weight: 300; outline: none;font-style: normal;font-weight: 300;}
+table { border-collapse: collapse; border-spacing: 0; }
+img { display: block; }
+i{font-style: normal;}
+input[type=button],input[type=submit]{-webkit-appearance: none;}
+html,body{height: 100%;width: 100%;}
+body{background: url(../image/download.jpg) center top no-repeat;background-size: cover;}
+.download_box{color: #818181;}
+.download_box .cue{position: absolute;top:10px;right: 20px;background: url(../image/arrow_open.png) right top no-repeat;background-size:auto 50%;height: 60px;line-height: 1.5;padding:40px 14px 0 0;z-index: 10;display: none;}
+.download_box .cue i{color: #f00;}
+.download_box .download_btn{display: block;border: solid 1px #818181;border-radius: 50px;line-height: 3;color: #818181;font-size: 90%;text-align: center;width: 160px;opacity: .8;margin: 22% auto 0;transform:scale(.9,.9);}
+@keyframes scalecue{0%   {transform:scale(1,1);} 25%  {transform:scale(1.1,1.1);} 50%  {transform:scale(1,1);} 75%  {transform:scale(1.1,1.1);}100% {transform:scale(1,1);}}
+@-webkit-keyframes scalecue{0%   {transform:scale(1,1);}25%  {transform:scale(1.1,1.1);}50%  {transform:scale(1,1);}75%  {transform:scale(1.1,1.1);} 100% {transform:scale(1,1);}}
+.download_box .cue{animation:scalecue 2.4s infinite;-webkit-animation:scalecue 2.4s infinite;}
+.download_box .logo_box{text-align: center;font-size: 140%;line-height: 1.4;position: absolute;top: 26%;left: 0;width: 100%;}
+.download_box .logo_box img{margin: 0 auto 20px;width: 28%;}
+</style>
+</head>
+<body>
+    <div class="download_box">
+        <div class="cue" id="cue_cue">点击右上角<br>选择<i id="cue_text">“在Safari中打开”</i></div>
+        <div class="logo_box">
+            <img src="../image/logo_icon.png" alt="">
+            院线经营分析系统<br>V1.0
+            <a ontouchstart='javascript:downapp();' class="download_btn">点击下载</a>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+function downapp()
+{
+	var useragent = navigator?navigator.userAgent:'';
+	var url = 'http://data.yinghezhong.com/v2/';
+    var _id = document.getElementById('cue_cue');
+    var _cue_text = document.getElementById('cue_text');
+	if(useragent.indexOf('MicroMessenger') >0 || useragent.indexOf('QQ') >0)
+	{//微信浏览器
+		if(useragent.indexOf('ndroid')>0)
+		{
+			// alert("请点击右上角-在浏览器中打开");
+            if (useragent.indexOf('QQ') >0) {
+                var url="http://data.yinghezhong.com/v2/DXdataapp2.0.1.apk";
+            }else{
+                _cue_text.innerHTML = '"浏览器中打开"';
+                _id.style.display = 'block';
+    			return false;
+            }
+		}
+		else if(useragent.indexOf('iPad')>=0)
+		{
+				// alert("请点击右上角-在Safari中打开");
+                _id.style.display = 'block';
+				return false;
+		}
+		else if(useragent.indexOf('iPhone')>=0 || useragent.indexOf('iPod')>=0)
+		{
+			// alert("请点击右上角-在Safari中打开");
+            _id.style.display = 'block';
+			return false;
+		}
+	}
+	else
+	{
+		if(useragent.indexOf('ndroid')>0)
+		{
+				var url="http://data.yinghezhong.com/v2/DXdataapp2.0.1.apk";  //安卓客户端下载地址
+		}
+		else if(useragent.indexOf('iPad')>=0)
+		{
+				var url ="itms-services://?action=download-manifest&url=https://dn-dingxin.qbox.me/DingXinDataApp_2.0.0.plist"; //IPAD客户端下载地址
+
+		}
+		else if(useragent.indexOf('iPhone')>=0 || useragent.indexOf('iPod')>=0)
+		{
+				var url ="itms-services://?action=download-manifest&url=https://dn-dingxin.qbox.me/DingXinDataApp_2.0.0.plist"; //iPhone客户端下载地址
+				//var url ="itms-services://?action=download-manifest&url=https://downcdn.b0.upaiyun.com/app/dx.plist"; //iPhone客户端下载地址
+		}
+	}
+	window.location.href = url;
+}
+</script>

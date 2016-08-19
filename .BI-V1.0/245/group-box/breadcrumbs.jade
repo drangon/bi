@@ -1,0 +1,10 @@
+- var hrefArr = [['/bi/cinema/movie.html','排片'],['/bi/cinema/ticket.html','票房']];
+nav#breadcrumbs.breadcrumbs
+	ul.breadcrumbs-list
+		each item, index in hrefArr
+			if	index==nvFlag
+				li.active
+					a(href=item[0])=item[1]
+			else
+				li
+					a(href=item[0])=item[1]

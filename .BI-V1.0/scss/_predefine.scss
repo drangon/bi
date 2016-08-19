@@ -1,0 +1,59 @@
+$baseSize: 41.4;
+$f22: .22rem;
+$f28: .23rem;
+$f32: .26rem;
+$f36: .3rem;
+$f38: .31rem;
+$f42: .34rem;
+$f48: .39rem;
+$f56: .45rem;
+$f90: .72rem;
+
+$colfff: #fff;
+$col909: #909090;
+$cold9d: #d9d9d9;
+$col748: #748af9;
+$cola6a: #a6a6a6;
+$colf5f: #f5f5f5;
+$colc8c: #c8c8c8;
+$colff7: #ff784e;
+$col818: #818181;
+$globalColor: #546db3;
+
+
+$imgDefaultUrl: '../image/' !default;
+
+@function rateRem($value){
+    @return $value/3/$baseSize*1rem
+}
+@function createImgUrl($name, $suffix){
+    @return $imgDefaultUrl+$name+'.'+$suffix;
+}
+
+@mixin background(
+    $name,
+    $suffix: 'png'
+){
+    background-image: url(createImgUrl($name, $suffix));
+    background-repeat: no-repeat;
+}
+@mixin flex(){
+    display:-moz-box;
+    display:-webkit-box;
+}
+@mixin flexValue($value: 1){
+    -webkit-box-flex: $value;
+    -moz-box-flex: $value;
+}
+@mixin borderTB(
+    $borderWidth: 1px,
+    $borderColor: #e5e5e5
+){
+    border-top: $borderWidth solid $borderColor;
+    border-bottom: $borderWidth solid $borderColor;
+}
+@mixin text-hidden{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

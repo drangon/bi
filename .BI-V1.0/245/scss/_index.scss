@@ -1,0 +1,107 @@
+@import 'predefine';
+
+.date{
+    height: rateRem(102);
+    line-height: rateRem(102);
+    border-width: 1px 0;
+    background: $colfff;
+    @extend .abcde;
+    &:after{
+        border-color: $cold9d;
+    }
+    span{
+        padding: rateRem(10);
+        background: $col748;
+        color: $colfff;
+        font-size: $f36;
+        border-radius: 2px;
+        vertical-align: top;
+    }
+    em{
+        padding-left: rateRem(31);
+        font-size: $f36;
+        vertical-align: top;
+    }
+}
+.cinema{
+    position: relative;
+    background: white;
+    margin-top: rateRem(1);
+    @extend .abcde;
+    &:after{
+        border-bottom-color: $cold9d;
+    }
+    .income{
+        padding: rateRem(70) 0;
+        @include flex;
+        p{
+            display: block;
+            font-size: $f36;
+            text-align: center;
+            color: $col818;
+            @include flexValue();
+            &:first-child{
+                // border-right: 1px solid #e5e5e5;
+            }
+        }
+        span{
+            display: inline-block;
+            padding-bottom: 5px;
+            font-size: $f90;
+            color: #f8a91f;
+            font-family: 'Arial';
+            em{
+                font-size: $f48;
+            }
+        }
+    }
+    .msg{
+        @include flex;
+        padding-bottom: rateRem(60);
+        span{
+            display: block;
+            text-align: center;
+            font-size: $f28;
+            color: $col818;
+            @include flexValue();
+        }
+        b{
+            font-size: rateRem(66);
+            font-family: 'arial';
+        }
+    }
+}
+.wrap-box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $colfff;
+}
+.nav-list{
+    li {
+        background: $colfff;
+        a {
+            display: block;
+            height: rateRem(144);
+            line-height: rateRem(144);
+            
+            padding: 0 rateRem(34);
+            font-size: $f42;
+            position: relative;
+            @extend .abcde;
+            &:after{
+                border-bottom-color: #e5e5e5;
+            }
+            em {
+                display: inline-block;
+                width: rateRem(24);
+                height: rateRem(45);
+                position: absolute;
+                right: rateRem(54);
+                top: rateRem(50);
+                @include background('left-arrow');
+                background-size: 100%;
+            }
+        }
+    }
+}

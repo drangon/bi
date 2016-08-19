@@ -1,0 +1,49 @@
+@import "predefine";
+
+.cinema-list{
+    &:first-child{
+        dt{
+            margin-right: 0;
+        }
+    }
+    font-size: $f42;
+    background: $colfff;
+    dt{
+        height: rateRem(80);
+        line-height: rateRem(80);
+        padding-left: rateRem(30);
+        margin-right: rateRem(18);
+        background: $colf5f;
+    }
+    dd{
+        padding-right: rateRem(18);
+        a{
+            display: block;
+            height: rateRem(150);
+            line-height: rateRem(150);
+            padding-left: rateRem(95);
+            position: relative;
+            @extend .abcde;
+            &:after{
+                border-bottom-color: #d7d7d7;
+            }
+        }
+        a:last-child{
+            &:after{
+                border: 0;
+            }
+        }
+    }
+}
+.cinema-abbr{
+    position: absolute;
+    right: 0;
+    top: rateRem(480);
+    a{
+        display: block;
+        padding: rateRem(10) rateRem(10);
+        font-size: $f32;
+        color: $col818;
+        text-align: center;
+    }
+}

@@ -1,0 +1,1 @@
+webpackJsonp([9],[function(o,t,e){"use strict";var r=e(40),c=e(11),n={init:function(){c.on("#js-logout",this.logout)},logout:function(){r.jsonp({url:"/reportProxyService/user/logout",success:function(o){if(o.success){var t=localStorage.user;location.href="/bi/user/login.html",localStorage.clear("token"),localStorage.user=t}}})}};n.init()}]);

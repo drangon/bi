@@ -1,0 +1,10 @@
+header.wrap-gap
+    if showBackIcon
+        a.back(href=backIconUrl)
+    if showCloseIcon
+        a.close#js-cinema-close(href="javascript:history.go(-1)")
+    if !hideSelCinemaIcon
+        a#js-sel-cinema.sel-cinema <i></i> 筛选
+    span.title#js-title=defaultTitle
+    if !hideChartIcon
+        a.sel-chart(href="/bi/navReport.html")

@@ -1,0 +1,45 @@
+extends layout
+
+block main
+    - var date='';
+    - var dateUnit='周';
+    - var scriptName='index';
+
+    include group-box/header
+    .date.wrap-gap#js-page-date
+        //span 昨日
+        em(style="padding-left: 0")
+
+    .cinema
+        .income
+            p
+                span
+                    i#js-ticket
+                    em 万元
+                | <br/>票房收入
+            //p
+            //    span(style="color: #46d1b8")
+            //        i 18,2
+            //        em 万元
+            //    | <br/>卖品收入
+        .msg#js-income-msg
+            span
+                b
+                | 场次
+            span
+                b
+                | 万 人次
+            span
+                b
+                | % 上座率
+
+    .mt2
+        include group-box/date-sel
+
+    .chart.wrap-gap.mt2
+        h1 票房走势
+        .msg#js-ticket-chart
+
+    //.chart.wrap-gap
+    //    h1 卖品走势
+    //    .msg

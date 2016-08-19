@@ -1,0 +1,154 @@
+@import "predefine";
+.pop-calendar{
+	width: 100%;
+	height: 100%; 
+	overflow-y: scroll; 
+	display: none;
+	z-index:101;
+	position: fixed;
+	top: 0;
+	background: $colfff;
+	header{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index:2;
+	}
+	.btn{
+		position: fixed;
+		bottom: rateRem(60);
+		width: 100%;
+		z-index: 2;
+		a{
+			margin: 0 rateRem(34);
+		}
+	}
+}
+.calendar-wrap{
+	position: relative;
+	height: 100%;
+	.calendar-title{
+		position: fixed;
+		top: rateRem(132);
+		left: 0;
+		padding: 0 rateRem(27);
+		width:95.68%;
+		text-align: center;
+		background: $colf5f;
+		box-shadow: 0 1px 0 #d8d8d8;
+		z-index: 101;
+		// @include flex();
+		li {
+			// @include flexValue();
+			float:left;
+			width: 14.28%;
+			height: rateRem(100);
+			line-height: rateRem(100);
+			font-size: $f38;
+			color: $col818;
+			&.d-weekday{
+				color: #ffa800;
+			}
+		}
+	}
+	.calendar{
+		padding: rateRem(234) 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+		.months{
+			background: $colfff;
+			.month-box{
+				padding: rateRem(42) rateRem(27);
+			}
+			.month{
+				position: relative;
+				p{
+					height: rateRem(84);
+					line-height: rateRem(84);
+					background: #e5e5e5;
+					text-align: center;
+					font-size: rateRem(42);
+				}
+			}
+		}
+		.day-list{
+			width: 100%;
+			overflow: hidden;
+			li{
+				position: relative;
+				float: left;
+				width: (100%/7);
+				margin-top: rateRem(8);
+				height: rateRem(120);
+				line-height: rateRem(120);
+				font-size: rateRem(42);
+				z-index: 1;
+				text-align:center;
+				overflow: hidden;
+				&.active{
+					span{
+						color: #ffa800;
+					}
+				}
+				&.active-circle{
+					span{
+						background: #4c63d8;
+						color: $colfff;
+					}
+					
+				}
+				&.active-item{
+					background: #94a4f2;
+					span{
+						color: $colfff;
+						background: none;
+					}
+				}
+				&.active-start,&.active-end{
+					background: none;
+					&:before{
+						content:'';
+						position: absolute;
+						left: 50%;
+						top: 0;
+						width: rateRem(1000);
+						height: rateRem(120);
+						background: #94a4f2;
+						z-index:-1;
+					}
+					span{
+						background: #4c63d8;
+					}
+				}
+				&.disabled{
+					color: $cola6a;
+				}
+				&.active-end{
+					&:before{
+						left: auto;
+						right: 50%;
+					}
+				}
+				&.active-right-circle{
+					span{
+						color: $colfff;
+						background: #94a4f2;
+					}
+				}
+				span{
+					display: inline-block;
+					width: rateRem(120);
+					height: rateRem(120);
+
+					line-height: rateRem(120);
+					border-radius: 50%;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+extends ../layout
+
+block title
+    title 选择影院
+
+block main
+
+    - var scriptName='cinema/selCinema';
+    - var defaultTitle='选择影院';
+    - var showCloseIcon=true;
+    - var hideChartIcon=true;
+    - var hideSelCinemaIcon=true;
+    - var hideFooter=true;
+
+    include ../group-box/header
+
+    include ../group-box/search
+    .wrap-gap
+
+        .btn.btn-c-white.all-search
+            a(href="/bi/index.html" data-name="全部影院" data-code="") 全部影院
+    div
+        #js-cinema
+            //dl.cinema-list
+            //    dt
+            //        a(name="A") A
+            //    dd
+            //        a(href="#") 安宁横店影城
+            //        a(href="#") 安宁横店影城
+            //        a(href="#") 安宁横店影城
+    .cinema-abbr
+        //a A

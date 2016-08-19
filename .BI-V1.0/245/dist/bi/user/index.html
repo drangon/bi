@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/bi/css/vendor-7c011f68af.css" type="text/css">
+    <title>用户中心</title>
+  </head>
+  <body ontouchstart="">
+    <header><span class="title">我的</span></header>
+    <div class="user-v wrap-gap">当前版本：Beta1.0</div>
+    <div class="btn wrap-gap"><a id="js-logout">退出登录</a></div>
+    <footer class="footer"><a href="/bi/index.html"><i class="i-home"></i>首页</a><a href="/bi/movie/index.html"><i class="i-movie"></i>影片</a><a href="/bi/cinema/index.html"><i class="i-cinema"></i>影院</a><a href="/bi/user/index.html"><i class="i-user"></i>我的</a></footer>
+    <script>
+      function htmlSize(){
+          var size=document.body.clientWidth/10;
+          document.getElementById('html').style.fontSize=(size > 50) ? 50 : size + 'px';
+      }
+      window.resize=function(){
+          htmlSize();
+      }
+      htmlSize();
+      
+      
+    </script>
+    <script src="/bi/build/vendor-adab482027.js"></script>
+    <script src="/bi/build/global-697308f1f7.js"></script>
+    <script src="/bi/build/user/uindex-fcf495ee62.js"></script>
+  </body>
+</html>
